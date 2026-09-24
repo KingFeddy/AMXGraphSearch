@@ -9,7 +9,7 @@ in lockstep, enabling one BF16 GEMM per epoch covering all queries.
 
 Initial (wrong) projection: 1.449x end-to-end on GIST1M vs the medoid hop-0 batching
 projected 1.034x full-window ceiling. (The medoid-batch *measured* end-to-end
-result is ~1.007x at T=1 — see README Phase 9. The 1.192x figure used in
+result is ~1.007x at T=1 — see [research log, Phase 9](../../docs/research-log.md#phase-9-medoid-hop-0-batch-controller--implementation-and-measurement). The 1.192x figure used in
 earlier drafts was a superseded projection.)
 
 ## The Critical Error

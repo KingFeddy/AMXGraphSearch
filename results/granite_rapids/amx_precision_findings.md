@@ -73,4 +73,4 @@ The measured end-to-end recall drop is therefore much smaller:
 Note: the controller uses BF16 for both datasets, not INT8 for SIFT. SIFT1M
 is natively uint8, so an INT8 hop-0 path would be exactly lossless; that is
 identified as future work. Empirically, BF16 on SIFT already shows 0.00%
-measured drop. See README Phase 9 for the full measurement.
+measured drop. See [research log, Phase 9](../../docs/research-log.md#phase-9-medoid-hop-0-batch-controller--implementation-and-measurement) for the full measurement.

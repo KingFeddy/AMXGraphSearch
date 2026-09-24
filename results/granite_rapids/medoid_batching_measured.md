@@ -2,7 +2,7 @@
 
 End-to-end measurement of the implemented medoid-block BF16 GEMM batch
 controller. This is the built-and-measured counterpart to the projections
-in corrected_amdahl_analysis.md. Full discussion in README Phase 9.
+in corrected_amdahl_analysis.md. Full discussion in [research log, Phase 9](../../docs/research-log.md#phase-9-medoid-hop-0-batch-controller--implementation-and-measurement).
 
 ## Design (one line)
 Phase 1 (serial): one BF16 cblas_gemm_bf16bf16f32 over all N queries x R

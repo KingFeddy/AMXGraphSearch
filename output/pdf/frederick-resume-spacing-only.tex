@@ -1,0 +1,162 @@
+%-------------------------
+% Frederick Rajakumar - Software Engineering Internship Resume
+% Based on the general structure of Jake's Resume / sb2nov/resume (MIT License).
+% Compile with pdfLaTeX. No external assets are required.
+%-------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[explicit]{titlesec}
+\usepackage{accsupp}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\urlstyle{same}
+\raggedright
+\raggedbottom
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\hypersetup{
+  pdftitle={Frederick Rajakumar - Software Engineering Resume},
+  pdfauthor={Frederick Rajakumar}
+}
+
+% Body: original 10.5 pt type with Jake-style 12 pt line spacing. Entry titles: 11 pt.
+\newcommand{\resumeBody}{\fontsize{10.5}{12}\selectfont}
+\newcommand{\resumeTitle}{\fontsize{11}{12.5}\selectfont}
+
+% ActualText preserves small-cap headings during PDF text extraction.
+\titleformat{\section}{
+  \vspace{-4pt}\bfseries\scshape\raggedright\large
+}{}{0em}{\BeginAccSupp{method=pdfstringdef,ActualText={#1}}#1\EndAccSupp{}}[\color{black}\titlerule \vspace{-5pt}]
+
+\titlespacing*{\section}{0pt}{9.5pt}{7.5pt}
+
+% Entries use ordinary text paragraphs rather than layout tables.
+\newcommand{\resumeSubheading}[4]{%
+  {\resumeTitle\textbf{#1}\hfill{\resumeBody #2}\par}
+  {\resumeBody #3\hfill #4\par}
+}
+
+% Project name, technologies, dates, and full clickable demo URL.
+\newcommand{\resumeProjectHeading}[4]{%
+  \vspace{2.5pt}%
+  {\resumeTitle\textbf{#1}\enspace\textbar\enspace
+   {\resumeBody\textit{#2}}\hfill{\resumeBody #3}\par}
+  {\resumeBody\href{#4}{\nolinkurl{#4}}\par}
+}
+
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=0.14in,label=\textbullet,
+    labelsep=0.05in,itemsep=1.0pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+  \resumeBody
+}
+\newcommand{\resumeItem}[1]{\item #1}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----------CONTACT INFORMATION----------
+\begin{center}
+  {\fontsize{23}{25}\selectfont\textbf{Frederick Rajakumar}}\\[1pt]
+  {\fontsize{10}{11.5}\selectfont
+    (732) 895-7248\enspace\textbar\enspace
+    \href{mailto:frederickjoshuar@gmail.com}{frederickjoshuar@gmail.com}\enspace\textbar\enspace
+    \href{https://linkedin.com/in/frederick-rajakumar}{linkedin.com/in/frederick-rajakumar}\enspace\textbar\enspace
+    \href{https://github.com/KingFeddy}{github.com/KingFeddy}}
+\end{center}
+
+%----------EDUCATION----------
+\section{Education}
+\resumeSubheading
+  {New Jersey Institute of Technology}{Newark, NJ}
+  {B.S. Computer Science \& Applied Physics \textbar\ GPA: 3.86/4.00}
+  {Expected Dec. 2027}
+{\resumeBody
+\textbf{Relevant Coursework:} DSA, OS, Systems Programming, Computer Networks, Database Systems, Linear Algebra\par}
+
+%----------TECHNICAL SKILLS----------
+\section{Technical Skills}
+{\resumeBody
+\textbf{Languages:} Python, C++, C, TypeScript, JavaScript, SQL, Java, Bash\\
+\textbf{Web \& Cloud:} React, Next.js, Node.js, FastAPI, PostgreSQL, REST APIs, Vercel, Railway\\
+\textbf{Tools:} Git, Docker, Linux, GitHub Actions (CI/CD), Playwright\\
+\textbf{AI \& ML:} PyTorch, NumPy, LangGraph, Claude API
+\par}
+
+%----------EXPERIENCE----------
+\section{Experience}
+
+\resumeSubheading
+  {Undergraduate Researcher {\mdseries -- NJIT Department of Computer Science}}{May 2026 -- Present}
+  {Advisor: Prof. Xiaoning Ding}{Newark, NJ}
+\resumeItemListStart
+\resumeItem{Engineered \textbf{C++ benchmarks} to evaluate \textbf{graph-based ANNS} acceleration on \textbf{Intel AMX CPUs} and \textbf{NVIDIA GPUs} by scheduling through \textbf{Slurm} on NJIT Wulver HPC}
+
+\resumeItem{Designed and built a \textbf{multithreaded batch controller} for Faiss and Vamana that parallelizes graph traversal to process \textbf{106K queries/second} at over \textbf{99\% Recall@10} on SIFT1M}
+
+\resumeItem{Achieved a \textbf{3.52\ensuremath{\times} speedup} in vector-distance kernels by batching query distance calculations into \textbf{GEMM operations}}
+
+\resumeItem{Discovered \textbf{memory-latency bottlenecks} on Intel AMX caused by irregular memory access and cache misses}
+\resumeItemListEnd
+
+\resumeSubheading
+  {Resident Assistant {\mdseries -- New Jersey Institute of Technology}}{Aug. 2026 -- Present}
+  {Residence Life}{Newark, NJ}
+\resumeItemListStart
+  \resumeItem{Provide about \textbf{20 duty hours/week} of coverage for \textbf{60+ residents} while resolving conflicts and documenting incidents}
+  \resumeItem{Co-hosted \textbf{2 events} for \textbf{80+ residents} by managing budgets, promotion, logistics, and execution}
+\resumeItemListEnd
+
+%----------PROJECTS----------
+\section{Projects}
+
+\resumeProjectHeading
+  {NJIT Schedule Builder}
+  {TypeScript, Next.js, FastAPI, PostgreSQL, Playwright}
+  {Summer 2026}
+  {https://njit-schedule-builder-web.vercel.app/scheduler}
+\resumeItemListStart
+  \resumeItem{Deployed a full-stack scheduler on Vercel and Railway that generates conflict-free schedules from \textbf{6,000+ course sections}}
+  \resumeItem{Designed a backtracking solver that generates up to 25 conflict-free schedules and averaged \textbf{2.8 ms per run in local testing}}
+  \resumeItem{Developed a \textbf{degree planner} that converts DegreeWorks PDFs into a graduation roadmap using course prerequisites and credit targets}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {Forge - Multi-Agent C Code Repair}
+  {Python, LangGraph, tree-sitter, Docker, cppcheck, clang-tidy}
+  {Spring 2026}
+  {https://forge-agenticai.streamlit.app/}
+\resumeItemListStart
+  \resumeItem{Engineered a \textbf{4-agent C-code repair pipeline} using LangGraph to analyze source code and generate patches with an LLM}
+  \resumeItem{Integrated \textbf{cppcheck and clang-tidy} with tree-sitter call graphs to help the LLM remove duplicate findings and prioritize bugs}
+  \resumeItem{Automated \textbf{patch compilation and execution in Docker} using GCC sanitizers and compiler feedback with a limit of 3 attempts per finding}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\href{https://github.com/RTailor2301/SnapHealth}{SnapHealth - AI Health Assistant}}
+  {Python, FastAPI, REST APIs, Claude API, Render}
+  {Spring 2026}
+  {https://snaphealth.vercel.app/}
+\resumeItemListStart
+  \resumeItem{Delivered a \textbf{Python and FastAPI backend} using Claude's vision API to explain symptoms and medication labels from text and images}
+  \resumeItem{Enabled \textbf{stateless follow-up chat} using health profiles and recent conversation history to personalize responses}
+  \resumeItem{Handled Claude API failures and malformed JSON by returning \textbf{structured fallback responses} when analysis could not be completed}
+\resumeItemListEnd
+
+%----------AWARDS & TRAINING----------
+\section{Awards \& Training}
+{\resumeBody
+\textbf{Verizon SMART Campus Challenge Finalist:} Received a development stipend to prototype a campus solution (2026)\\[2pt]
+\textbf{AWS Cloud Practitioner Essentials:} Completed AWS foundational cloud training
+\par}
+
+\end{document}
